@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app>
-      <v-container justify-center grid-list-lg>
+      <v-container fluid justify-center grid-list-lg>
         <v-layout column>  
           
           <h4 class="text-lg-right subheading mb-3">Phaidra Vue Components Example</h4>
@@ -13,14 +13,14 @@
           </v-flex>
 
           <v-layout row>  
-            <v-flex xs3>
+            <v-flex xs5>
               <v-text-field v-model="solrbaseurl" :label="'solr'"></v-text-field>
             </v-flex>
-            <v-flex xs3>
+            <v-flex xs4>
               <v-text-field v-model="apibaseurl" :label="'phaidra-api'"></v-text-field>
             </v-flex>
             <template v-if="token">
-              <v-flex xs6>
+              <v-flex xs5>
                 <h3 class="font-weight-light pt-4">Logged in [{{ token }}]</h3>
               </v-flex>
               <v-flex xs1>
@@ -181,7 +181,7 @@ export default {
   },
   data () {
     return {
-      window: 0,
+      window: 2,
       displayjsonld: {},
       editform: {},
       form: {
@@ -328,8 +328,12 @@ export default {
     issued.type = 'dcterms:issued'
     this.form.sections[0].fields.push(issued)
     this.form.sections[1].fields.push(fields.getField('number-of-pages'))
-    this.form.sections[1].fields.push(fields.getField('mime-type'))
-    this.form.sections[1].fields.push(fields.getField('license'))
+    var mt = fields.getField('mime-type')
+    mt.value = 'application/pdf'
+    this.form.sections[1].fields.push(mt)
+    var license = fields.getField('license')
+    license.value = 'http://rightsstatements.org/vocab/InC/1.0/'
+    this.form.sections[1].fields.push(license)
   }
 }
 </script>

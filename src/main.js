@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import './plugins/vuetify'
 import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 import VueI18n from 'vue-i18n'
 import eng from 'phaidra-vue-components/src/i18n/eng'
 import deu from 'phaidra-vue-components/src/i18n/deu'
