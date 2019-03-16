@@ -260,12 +260,12 @@ export default {
 
     // resource type
     var rt = fields.getField('resource-type')
-    rt.value = 'https://pid.phaidra.org/vocabulary/resourcetype/HS9G-WDM9'
+    rt.value = 'https://pid.phaidra.org/vocabulary/8MY0-BQDQ'
     this.form.sections[0].fields.push(rt)
 
     // thesis type
     var genre = fields.getField('genre')
-    genre.value = 'https://pid.phaidra.org/vocabulary/genre/X3TK-PTTB'
+    genre.value = 'https://pid.phaidra.org/vocabulary/P2YP-BMND'
     this.form.sections[0].fields.push(genre)
 
     // title
@@ -319,7 +319,7 @@ export default {
 
     // member
     var rt = fields.getField('resource-type')
-    rt.value = 'https://pid.phaidra.org/vocabulary/resourcetype/B4CB-FN5F'
+    rt.value = 'https://pid.phaidra.org/vocabulary/69ZZ-2KGX'
     this.form.sections[1].fields.push(rt)
     this.form.sections[1].fields.push(fields.getField('file'))
     this.form.sections[1].fields.push(fields.getField('title'))
